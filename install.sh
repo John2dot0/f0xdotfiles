@@ -17,8 +17,8 @@ echo "--- Installing Software ---"
 
 pkgs=(
   "git"
-  "bluez"
-  "bluez-utils"
+#  "bluez"
+#  "bluez-utils"
   "cups"
   "cups-pdf"
   "zsh"
@@ -102,21 +102,21 @@ done
 echo "--- Installing AUR Software ---"
 
 aurpkgs=(
-  "brother-mfc-l2710dw"
-  "zoom"
-  "aic94xx-firmware"
-  "wd719x-firmware"
-  "upd72020x-fw"
-  "ast-firmware"
+#  "brother-mfc-l2710dw"
+#  "zoom"
+#  "aic94xx-firmware"
+#  "wd719x-firmware"
+# "upd72020x-fw"
+#  "ast-firmware"
   "visual-studio-code-bin"
-  "anydesk-bin"
+#  "anydesk-bin"
   "rustdesk-bin"
   "brave-beta-bin"
   "megasync-bin"
   "ttf-maple"
   "ttf-ms-win11-auto"
   "jdk-temurin"
-  "vmware-workstation"
+#  "vmware-workstation"
   "kanata-bin"
 )
 
@@ -131,14 +131,14 @@ sudo systemctl enable cups.service
 sudo systemctl enable cups.socket
 sudo systemctl start cups.service
 
-sudo systemctl enable vmware-networks.service
-sudo systemctl start vmware-networks.service
-sudo systemctl enable vmware-usbarbitrator
-sudo systemctl start vmware-usbarbitrator
+# sudo systemctl enable vmware-networks.service
+# sudo systemctl start vmware-networks.service
+# sudo systemctl enable vmware-usbarbitrator
+# sudo systemctl start vmware-usbarbitrator
 
-modprobe btusb
-sudo systemctl enable bluetooth.service
-sudo systemctl start bluetooth.service
+# modprobe btusb
+# sudo systemctl enable bluetooth.service
+# sudo systemctl start bluetooth.service
 
 echo "--- Configuring Firewall ---"
 
@@ -190,17 +190,17 @@ echo "--- Configuring Starship ---"
 
 ln -sf $PWD/config/starship.toml ~/.config/
 
-echo "--- Configuring Nvidia ---"
+# echo "--- Configuring Nvidia ---"
 
-sudo pacman -S --needed --noconfirm libva-nvidia-driver
+# sudo pacman -S --needed --noconfirm libva-nvidia-driver
 
-sudo systemctl enable nvidia-suspend.service
-sudo systemctl enable nvidia-hibernate.service
-sudo systemctl enable nvidia-resume.service
+# sudo systemctl enable nvidia-suspend.service
+# sudo systemctl enable nvidia-hibernate.service
+# sudo systemctl enable nvidia-resume.service
 
-sudo ln -sf $PWD/config/nvidia/nvidia.conf /etc/modprobe.d/
-sudo ln -sf $PWD/config/nvidia/nvidia_drm.conf /etc/modprobe.d/
-sudo ln -sf $PWD/config/nvidia/environment /etc/
+# sudo ln -sf $PWD/config/nvidia/nvidia.conf /etc/modprobe.d/
+# sudo ln -sf $PWD/config/nvidia/nvidia_drm.conf /etc/modprobe.d/
+# sudo ln -sf $PWD/config/nvidia/environment /etc/
 
 echo "--- Configuring Kanata ---"
 
